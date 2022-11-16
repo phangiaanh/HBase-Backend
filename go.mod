@@ -3,13 +3,14 @@ module hbase-processor
 go 1.19
 
 require (
-	github.com/labstack/echo/v4 v4.9.1
+	github.com/labstack/echo v3.3.10+incompatible
 	github.com/tsuna/gohbase v0.0.0-20221025131936-e9318e4eb331
 )
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-zookeeper/zk v1.0.3 // indirect
