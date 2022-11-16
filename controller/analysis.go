@@ -16,3 +16,13 @@ func GetAllCategory(c echo.Context) error {
 	// j, _ := json.Marshal(a)
 	return c.JSON(http.StatusOK, a)
 }
+
+func GetCategoryByID(c echo.Context) error {
+
+	return c.JSON(http.StatusOK, nil)
+}
+
+func GetRankByCus(c echo.Context) error {
+	a := models.GetRankByCus()
+	return c.JSON(http.StatusOK, a)
+}

@@ -27,7 +27,8 @@ func main() {
 	// e.GET("/salesperson/:id", controller.GetUser)
 
 	e.GET("/analysis/category/all", controller.GetAllCategory)
-	e.GET("/analysis/category/:id", controller.GetAllCustomers)
+	e.GET("/analysis/category/:id", controller.GetCategoryByID)
+	e.GET("/analysis/rank/cus/", controller.GetRankByCus)
 
 	e.Logger.Fatal(e.Start(":1323"))
 
