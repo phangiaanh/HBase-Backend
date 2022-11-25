@@ -20,6 +20,7 @@ func main() {
 	})
 
 	e.GET("/salesperson/:id", controller.GetSalesPersonWithID)
+	e.GET("/salesperson/rec/:id", controller.GetSalesPersonRecommendWithID)
 	e.GET("/salesperson/numcus/:id", controller.GetNumCustomerBySalesPersonID)
 
 	e.GET("/customer/all", controller.GetAllCustomers)
@@ -29,6 +30,9 @@ func main() {
 	e.GET("/analysis/category/all", controller.GetAllCategory)
 	e.GET("/analysis/category/:id", controller.GetCategoryByID)
 	e.GET("/analysis/rank/cus/", controller.GetRankByCus)
+	e.GET("/analysis/rank/ord/", controller.GetRankByOrder)
+	e.GET("/analysis/salesquota/ord/", controller.GetQuotaByOrd)
+	e.GET("/analysis/salesquota/ord/:id", controller.GetQuotaByOrdAndSalesID)
 
 	e.Logger.Fatal(e.Start(":1323"))
 

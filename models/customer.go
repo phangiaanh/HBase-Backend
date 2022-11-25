@@ -2,7 +2,6 @@ package models
 
 import (
 	"context"
-	"fmt"
 	"log"
 
 	"github.com/tsuna/gohbase/filter"
@@ -25,12 +24,12 @@ func GetAllCustomers() []string {
 	scanRsp := hbaseClient.Scan(scanRequest)
 	var err error
 	item, err := scanRsp.Next()
-	fmt.Println(item)
+	// fmt.Println(item)
 	for item != nil {
-		// fmt.Println(string(item.Cells[0].Row))
+		// // fmt.Println(string(item.Cells[0].Row))
 		item, err = scanRsp.Next()
 		if err != nil {
-			fmt.Println(err)
+			// fmt.Println(err)
 			continue
 		}
 		res = append(res, string(item.Cells[0].Row))

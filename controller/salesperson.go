@@ -10,9 +10,22 @@ import (
 
 func GetSalesPersonWithID(c echo.Context) error {
 	id := c.Param("id")
-	res := models.GetSalesPersonWithID(id)
+	res, err := models.GetSalesPersonWithID(id)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, "not exist")
+	}
 	// return c.String(http.StatusOK, id)
-	return c.JSON(http.StatusOK, res.String())
+	return c.JSON(http.StatusOK, res)
+}
+
+func GetSalesPersonRecommendWithID(c echo.Context) error {
+	id := c.Param("id")
+	res, err := models.GetSalesPersonRecommendWithID(id)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, "not exist")
+	}
+	// return c.String(http.StatusOK, id)
+	return c.JSON(http.StatusOK, res)
 }
 
 func GetNumCustomerBySalesPersonID(c echo.Context) error {
